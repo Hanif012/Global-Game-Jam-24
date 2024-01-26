@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - weapon
+  - yellowballoon
+  - orangeballoon
   layers:
   - Default
   - TransparentFX
