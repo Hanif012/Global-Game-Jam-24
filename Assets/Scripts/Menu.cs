@@ -8,10 +8,11 @@ using UnityEngine.Audio;
 
 public class Menu : MonoBehaviour
 {
+    public GameObject levelLoader;
     public AudioMixer audioMixer;
     public Animator animator;
     public void PlayGame(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        levelLoader.GetComponent<LoadRandomLevel>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex);
     }
     public void SetVolume(float volume){
         audioMixer.SetFloat("volume", volume);
