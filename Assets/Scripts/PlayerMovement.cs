@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     bool grabbing = false;
     Vector2 movement;
 
-    public Rigidbody2D playerBody;
+    public GameObject player;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        playerBody.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, playerBody.velocity.y);
+        player.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxisRaw("Horizontal") * speed, player.GetComponent<Rigidbody2D>().velocity.y);
     }
 
     // Update is called once per frame
@@ -53,6 +53,9 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetMouseButton(0) && grabable){
             grabbing = true;
+            player.GetComponent<DistanceJoint2D>().connectedBody = hit.collider.gameObject.GetComponent<Rigidbody2D>();
+            player.GetComponent<DistanceJoint2D>().connectedAnchor = grabPoint.transform.position;
+            player.GetComponent<DistanceJoint2D>().enabled = true;
             GetComponent<HingeJoint2D>().connectedBody = hit.collider.gameObject.GetComponent<Rigidbody2D>();
             GetComponent<HingeJoint2D>().enabled = true;
             // rb.bodyType = RigidbodyType2D.Static;
