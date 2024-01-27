@@ -19,19 +19,15 @@ public class Grab : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(!other.transform.CompareTag("Player") && !other.transform.CompareTag("Ground"))
+        if(!other.transform.CompareTag("Player") && !other.transform.CompareTag("Ground")&& !other.transform.CompareTag("yellowballoon") && !other.transform.CompareTag("orangeballoon"))
         {
-            Debug.Log(hold);
             if(hold)
             {
                 Debug.Log("grabbed");
                 Rigidbody2D rb = other.transform.GetComponent<Rigidbody2D>();
-                Debug.Log(rb);
                 if(rb != null){
                     FixedJoint2D fj = gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
                     fj.connectedBody = rb;
-                }else{
-                    FixedJoint2D fj = gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
                 }
             }
         }

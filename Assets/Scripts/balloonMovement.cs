@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class balloonMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
     public bool isGoingUp = true;
     public float max;
     public float min;
-    public GameObject balloon;
   
  
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         min = rb.position.y;
+        max = Random.Range(1f, 3f);
 
     }
 
@@ -36,9 +36,9 @@ public class balloonMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.tag);
-        if(other.tag =="weapon")
+        if(other.CompareTag("weapon"))
         {
-            Destroy(balloon);
+            Destroy(gameObject);
         }
     }
 }

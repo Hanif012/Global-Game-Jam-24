@@ -10,18 +10,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce = 10f;
     public bool isJumpPressed = false;
 
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
            isJumpPressed = true;
-           Debug.Log("Update Jump");
+        //    Debug.Log("Update Jump");
          } 
     }
 
@@ -29,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isJumpPressed)
         {
-            Debug.Log("FixedUpdate Jump");
+            // Debug.Log("FixedUpdate Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);   
             isJumpPressed = false;
         }

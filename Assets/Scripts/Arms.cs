@@ -5,7 +5,8 @@ using UnityEngine;
 public class Arms : MonoBehaviour
 {
     public Rigidbody2D rb;
-    int speed = 300;
+    [SerializeField]
+    private int speed = 300;
     public KeyCode key;
     // Start is called before the first frame update
     void Start()
