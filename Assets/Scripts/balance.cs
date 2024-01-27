@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class balance : MonoBehaviour
 {
+    public PlayerController playerController;
+    public Grab grab1;
+    public Grab grab2;
 
     public float targetRotation;
     public Rigidbody2D rb;
@@ -16,6 +19,9 @@ public class balance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.MoveRotation(Mathf.LerpAngle(rb.rotation, targetRotation, force * Time.fixedDeltaTime));       
+        if(!playerController.grounded && (grab1.hold || grab2.hold))
+        {
+            rb.MoveRotation(Mathf.LerpAngle(rb.rotation, targetRotation, force * Time.fixedDeltaTime));       
+        }
     }
 }

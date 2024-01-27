@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 0}
+  hold: 0
   key: 323
 --- !u!1 &76505292 stripped
 GameObject:
@@ -500,9 +501,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae2069146bdb9d41b66f3ac0a323abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 143165156}
+  grab1: {fileID: 1266923320}
+  grab2: {fileID: 696241826}
   targetRotation: -90
   rb: {fileID: 139309212}
-  force: 200
+  force: 500
 --- !u!1 &143165149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 386791141387813222, guid: 9f9ee6bf544225b4d907ff5f65861474, type: 3}
@@ -582,6 +586,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae2069146bdb9d41b66f3ac0a323abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 143165156}
+  grab1: {fileID: 1266923320}
+  grab2: {fileID: 696241826}
   targetRotation: 89
   rb: {fileID: 143165151}
   force: 300
@@ -1021,7 +1028,7 @@ GameObject:
   - component: {fileID: 305818344}
   m_Layer: 0
   m_Name: Square
-  m_TagString: weapon
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1132,8 +1139,8 @@ Transform:
   m_GameObject: {fileID: 305818340}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.77, y: -3.66, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.48, y: -2.04, z: 0}
+  m_LocalScale: {x: 1.9988, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1616,6 +1623,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae2069146bdb9d41b66f3ac0a323abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  grab1: {fileID: 0}
+  grab2: {fileID: 0}
   targetRotation: -90
   rb: {fileID: 314759122}
   force: 300
@@ -1648,6 +1658,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae2069146bdb9d41b66f3ac0a323abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  grab1: {fileID: 0}
+  grab2: {fileID: 0}
   targetRotation: 90
   rb: {fileID: 314759119}
   force: 500
@@ -2492,6 +2505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 646262373}
+  hold: 0
   key: 324
 --- !u!233 &696241827
 HingeJoint2D:
@@ -2628,6 +2642,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 0}
+  hold: 0
   key: 324
 --- !u!233 &751072919
 HingeJoint2D:
@@ -2728,9 +2743,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae2069146bdb9d41b66f3ac0a323abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 143165156}
+  grab1: {fileID: 1266923320}
+  grab2: {fileID: 696241826}
   targetRotation: -90
   rb: {fileID: 855733430}
-  force: 200
+  force: 500
 --- !u!1 &760038382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3874,6 +3892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 646262373}
+  hold: 0
   key: 323
 --- !u!233 &1266923321
 HingeJoint2D:
@@ -5388,6 +5407,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae2069146bdb9d41b66f3ac0a323abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  grab1: {fileID: 0}
+  grab2: {fileID: 0}
   targetRotation: -90
   rb: {fileID: 1941966640}
   force: 300
@@ -5495,6 +5517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae2069146bdb9d41b66f3ac0a323abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 143165156}
+  grab1: {fileID: 1266923320}
+  grab2: {fileID: 696241826}
   targetRotation: 90
   rb: {fileID: 2057402445}
   force: 20

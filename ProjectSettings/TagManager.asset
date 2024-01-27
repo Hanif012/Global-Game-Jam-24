@@ -10,6 +10,7 @@ TagManager:
   - orangeballoon
   - DartDelete
   - Box
+  - Platform
   layers:
   - Default
   - TransparentFX
