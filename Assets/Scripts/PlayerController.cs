@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
             audioManager.PlaySound("Jump");
         //    Debug.Log("Update Jump");
         } 
-        if(Mathf.Abs(rb.velocity.x) > 0.5f && grounded){
+        if(Mathf.Abs(rb.velocity.x) > 0.5f && groundCheck.isGrounded){
             if(!footstep.isPlaying){
                 footstep.Play();
             }
