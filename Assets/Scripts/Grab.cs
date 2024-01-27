@@ -19,8 +19,9 @@ public class Grab : MonoBehaviour
             hold = false;
             if(GetComponent<FixedJoint2D>() != null){
                 if(GetComponent<FixedJoint2D>().connectedBody != null){
-                    Debug.Log("throw audio");
-                    audioManager.PlaySound();
+                    if(GetComponent<FixedJoint2D>().connectedBody.transform.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Kinematic){
+                        audioManager.PlaySound("Throw");
+                    }
                 }
             }
             Destroy(GetComponent<FixedJoint2D>());
@@ -36,6 +37,7 @@ public class Grab : MonoBehaviour
                 Rigidbody2D rb = other.transform.GetComponent<Rigidbody2D>();
                 if(rb != null){
                     Debug.Log("grabbed");
+                    audioManager.PlaySound("Grab");
                     FixedJoint2D fj = gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
                     fj.connectedBody = rb;
                 }
