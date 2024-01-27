@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Arms : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    Rigidbody2D rb;
     [SerializeField]
     private int speed = 300;
     public KeyCode key;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame

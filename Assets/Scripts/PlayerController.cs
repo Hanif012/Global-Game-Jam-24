@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log(other.tag);
+        // Debug.Log(other.tag);
         if(other.tag =="Ground"&& !grounded)
         {
             grounded=true;
