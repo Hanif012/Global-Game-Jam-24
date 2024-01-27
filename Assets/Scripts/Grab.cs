@@ -5,7 +5,7 @@ using UnityEngine;
 public class Grab : MonoBehaviour
 {
     public AudioManager audioManager;
-    private bool hold;
+    public bool hold;
     public KeyCode key;
     private void Update()
     {
@@ -33,9 +33,9 @@ public class Grab : MonoBehaviour
         {
             if(hold)
             {
-                Debug.Log("grabbed");
                 Rigidbody2D rb = other.transform.GetComponent<Rigidbody2D>();
                 if(rb != null){
+                    Debug.Log("grabbed");
                     FixedJoint2D fj = gameObject.AddComponent(typeof(FixedJoint2D)) as FixedJoint2D;
                     fj.connectedBody = rb;
                 }
