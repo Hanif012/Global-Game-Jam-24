@@ -4,20 +4,28 @@ using UnityEngine;
 
 public class Grab : MonoBehaviour
 {
+    public AudioManager audioManager;
     private bool hold;
     public KeyCode key;
     private void Update()
     {
         if (Input.GetKey(key))
         {
-            // Debug.Log("pressed");
             hold = true;
+
         }
         else
         {
             hold = false;
+            if(GetComponent<FixedJoint2D>() != null){
+                if(GetComponent<FixedJoint2D>().connectedBody != null){
+                    Debug.Log("throw audio");
+                    audioManager.PlaySound();
+                }
+            }
             Destroy(GetComponent<FixedJoint2D>());
         }
+
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -32,17 +40,6 @@ public class Grab : MonoBehaviour
                     fj.connectedBody = rb;
                 }
             }
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        
-        if(!collision.transform.CompareTag("Player") && !collision.transform.CompareTag("Ground") && !hold)
-        {
-            Debug.Log("exit");
-            //not working 
-            SoundManager.PlaySound(SoundManager.Sound.PlayerThrow);
         }
     }
 }
