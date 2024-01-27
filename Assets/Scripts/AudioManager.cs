@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource audioSource;
+    AudioSource audioSource;
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
-    enum Sound{
-        PlayerThrow,
-        PlayerJump,
-        PlayerWalk
-    }
+
     [System.Serializable]
     public class SoundAudioClip
     {
@@ -22,9 +18,16 @@ public class AudioManager : MonoBehaviour
     }
     public SoundAudioClip[] soundAudioClipArray;
 
-    public void PlaySound()
+    public void PlaySound(string name)
     {
-        audioSource.clip = soundAudioClipArray[0].audioClip;
-        audioSource.Play(0);
+        foreach(SoundAudioClip soundAudioClip in soundAudioClipArray)
+        {
+            if(soundAudioClip.audioName == name)
+            {
+                audioSource.clip = soundAudioClip.audioClip;
+                audioSource.Play(0);
+                break;
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3925874213775119172
+--- !u!1 &4908162098863755147
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6597902134683029422}
-  - component: {fileID: 5026757586239839281}
-  - component: {fileID: 2489719363009351991}
+  - component: {fileID: 7722288819699015179}
+  - component: {fileID: 8199146891508875789}
+  - component: {fileID: 1881447778678794887}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -18,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6597902134683029422
+--- !u!4 &7722288819699015179
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3925874213775119172}
+  m_GameObject: {fileID: 4908162098863755147}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -12.150929, y: -4.818198, z: 0.018984066}
@@ -33,13 +33,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &5026757586239839281
+--- !u!82 &8199146891508875789
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3925874213775119172}
+  m_GameObject: {fileID: 4908162098863755147}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -129,26 +129,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &2489719363009351991
+--- !u!114 &1881447778678794887
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3925874213775119172}
+  m_GameObject: {fileID: 4908162098863755147}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63fb453793c23f840885c603bae308e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
   soundAudioClipArray:
-  - audioName: Throw
+  - audioName: 
     audioClip: {fileID: 8300000, guid: 8fa7abd1eeafed448a5fdfb1833cb69d, type: 3}
-  - audioName: Jump
-    audioClip: {fileID: 8300000, guid: e52ca164e2e87d647bfa9d04eaf968aa, type: 3}
-  - audioName: Landing
-    audioClip: {fileID: 8300000, guid: fa85fb58b5a1fdf41b67def13ad0ea1a, type: 3}
-  - audioName: Grab
-    audioClip: {fileID: 8300000, guid: 442f091a447ce2344bfdafc7d14d0b99, type: 3}
-  - audioName: Swinging
-    audioClip: {fileID: 8300000, guid: 8fa7abd1eeafed448a5fdfb1833cb69d, type: 3}
+  - audioName: 
+    audioClip: {fileID: 0}
