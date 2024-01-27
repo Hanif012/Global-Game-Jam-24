@@ -94,7 +94,7 @@ ScriptedImporter:
     spritePosition: {x: 0, y: 0}
   mosaicSpriteImportData: []
   rigSpriteImportData:
-  - name: Isi meteran
+  - name: Meteran bungkus mask
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -102,6 +102,27 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 426
+      y: 4
+      width: 368
+      height: 1951
+    spriteID: acc7cc63dbd2e6a4a8f49cba19e4f6bd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 426, y: 4}
+    spritePosition: {x: 817, y: 20}
+  - name: Isi meteran
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 802
       y: 4
       width: 220
       height: 1775
@@ -113,7 +134,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 426, y: 4}
+    uvTransform: {x: 802, y: 4}
     spritePosition: {x: 890, y: 93}
   - name: Meteran bungkus
     originalName: 
@@ -170,13 +191,23 @@ ScriptedImporter:
   resliceFromLayer: 0
   mosaicPSDLayers: []
   rigPSDLayers:
+  - name: Meteran bungkus mask
+    spriteName: Meteran bungkus mask
+    isGroup: 0
+    parentIndex: -1
+    spriteID: acc7cc63dbd2e6a4a8f49cba19e4f6bd
+    layerID: 9
+    mosaicPosition: {x: 426, y: 4}
+    flatten: 0
+    isImported: 1
+    isVisible: 1
   - name: Isi meteran
     spriteName: Isi meteran
     isGroup: 0
     parentIndex: -1
     spriteID: 7fa27bc71c2c35c4daa4aa6fa1ad38ed
     layerID: 5
-    mosaicPosition: {x: 426, y: 4}
+    mosaicPosition: {x: 802, y: 4}
     flatten: 0
     isImported: 1
     isVisible: 1

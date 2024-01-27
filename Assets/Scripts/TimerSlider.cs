@@ -10,6 +10,10 @@ public class sleepiness : MonoBehaviour
 
     private float timer = 0f;
     public float delayAmount = 0f;
+    void Start(){
+        slider.maxValue = time;
+        slider.value = time;
+    }
     void Update()
     {
         timer += Time.deltaTime;
