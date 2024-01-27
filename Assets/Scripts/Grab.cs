@@ -8,11 +8,13 @@ public class Grab : MonoBehaviour
     public KeyCode key;
     private void Update()
     {
-        if(Input.GetKey(key))
+        if (Input.GetKey(key))
         {
             // Debug.Log("pressed");
             hold = true;
-        }else{
+        }
+        else
+        {
             hold = false;
             Destroy(GetComponent<FixedJoint2D>());
         }
@@ -30,6 +32,17 @@ public class Grab : MonoBehaviour
                     fj.connectedBody = rb;
                 }
             }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        
+        if(!collision.transform.CompareTag("Player") && !collision.transform.CompareTag("Ground") && !hold)
+        {
+            Debug.Log("exit");
+            //not working 
+            SoundManager.PlaySound(SoundManager.Sound.PlayerThrow);
         }
     }
 }
