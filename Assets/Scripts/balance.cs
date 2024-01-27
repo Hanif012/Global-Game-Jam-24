@@ -13,6 +13,8 @@ public class balance : MonoBehaviour
     public bool isGroundCheck=false;
     public bool isGrounded;
     public bool isBalanced;
+
+    public AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +42,11 @@ public class balance : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log(other.tag);
+        // Debug.Log(other.tag);
         if(isGroundCheck && (other.tag =="Ground" || other.tag == "Platform")&& !isGrounded)
         {
             isGrounded=true;
+            audioManager.PlaySound("Landing");
         }
     }
     private void OnTriggerExit2D(Collider2D other){
