@@ -8,6 +8,8 @@ TagManager:
   - weapon
   - yellowballoon
   - orangeballoon
+  - DartDelete
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -17,8 +19,8 @@ TagManager:
   - UI
   - charmovement
   - charinside
-  - 
-  - 
+  - CharAndBalloonBlock
+  - Weapon
   - 
   - 
   - 
