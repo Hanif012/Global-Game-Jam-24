@@ -8,23 +8,53 @@ using UnityEngine.Audio;
 
 public class Menu : MonoBehaviour
 {
-    public GameObject levelLoader;
-    public AudioMixer audioMixer;
+    AudioManager audioManager;
     public Animator animator;
+    public GameObject settings;
+    public GameObject menu;
+
+    private void Start()
+    {
+        audioManager = GetComponent<AudioManager>();
+        settings.SetActive(false);
+        menu.SetActive(true);
+    }
+
     public void PlayGame(){
-        levelLoader.GetComponent<LoadRandomLevel>().LoadNextLevel(SceneManager.GetActiveScene().buildIndex);
+        int level = Random.Range(2, 8);
+        while(level == SceneManager.GetActiveScene().buildIndex){
+            level = Random.Range(2, 8);
+        }
+        SceneManager.LoadScene(level);
     }
     public void SetVolume(float volume){
-        audioMixer.SetFloat("volume", volume);
+        AudioListener.volume = volume;
     }
     public void OpenSettings(){
+        audioManager.PlaySound("OpenMenu"); 
+        settings.SetActive(true);
+        menu.SetActive(false);
         animator.SetBool("settingOpen", true);
     }
     public void CloseSettings(){
+        audioManager.PlaySound("CloseMenu"); 
+        settings.SetActive(false);
+        menu.SetActive(true);
         animator.SetBool("settingOpen", false);
     }
 
     public void SetFullscreen(bool isFullscreen){
         Screen.fullScreen = isFullscreen;
+    }
+    public void QuitGame(){
+        Application.Quit();
+    }
+
+    public void OnHover(){
+        audioManager.PlaySound("Hover");
+    }
+
+    public void OnClick(){
+        audioManager.PlaySound("Click");
     }
 }
