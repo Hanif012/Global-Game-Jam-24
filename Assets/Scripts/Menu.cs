@@ -12,12 +12,22 @@ public class Menu : MonoBehaviour
     public Animator animator;
     public GameObject settings;
     public GameObject menu;
+    public GameObject credit;
+    // public GameObject hoverPlay;
+    // public GameObject hoverSetting;
+    // public GameObject hoverCredit;
+    // public GameObject hoverExit;
 
     private void Start()
     {
         audioManager = GetComponent<AudioManager>();
         settings.SetActive(false);
         menu.SetActive(true);
+        credit.SetActive(false);
+        // hoverExit.SetActive(false);
+        // hoverCredit.SetActive(false);
+        // hoverPlay.SetActive(false);
+        // hoverSetting.SetActive(false);
     }
 
     public void PlayGame(){
@@ -42,6 +52,18 @@ public class Menu : MonoBehaviour
         menu.SetActive(true);
         animator.SetBool("settingOpen", false);
     }
+    public void OpenCredit(){
+        audioManager.PlaySound("OpenMenu"); 
+        credit.SetActive(true);
+        menu.SetActive(false);
+        animator.SetBool("creditOpen", true);
+    }
+    public void CloseCredit(){
+        audioManager.PlaySound("CloseMenu"); 
+        credit.SetActive(false);
+        menu.SetActive(true);
+        animator.SetBool("creditOpen", false);
+    }
 
     public void SetFullscreen(bool isFullscreen){
         Screen.fullScreen = isFullscreen;
@@ -50,9 +72,34 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
-    public void OnHover(){
-        audioManager.PlaySound("Hover");
-    }
+    // public void OnHoverPlay(){
+    //     audioManager.PlaySound("Hover");
+    //     hoverExit.SetActive(false);
+    //     hoverCredit.SetActive(false);
+    //     hoverPlay.SetActive(true);
+    //     hoverSetting.SetActive(false);
+    // }
+    // public void OnHoverCredit(){
+    //     audioManager.PlaySound("Hover");
+    //     hoverExit.SetActive(false);
+    //     hoverCredit.SetActive(true);
+    //     hoverPlay.SetActive(false);
+    //     hoverSetting.SetActive(false);
+    // }
+    // public void OnHoverSetting(){
+    //     audioManager.PlaySound("Hover");
+    //     hoverExit.SetActive(false);
+    //     hoverCredit.SetActive(false);
+    //     hoverPlay.SetActive(false);
+    //     hoverSetting.SetActive(true);
+    // }
+    // public void OnHoverQuit(){
+    //     audioManager.PlaySound("Hover");
+    //     hoverExit.SetActive(true);
+    //     hoverCredit.SetActive(false);
+    //     hoverPlay.SetActive(false);
+    //     hoverSetting.SetActive(false);   
+    // }
 
     public void OnClick(){
         audioManager.PlaySound("Click");
