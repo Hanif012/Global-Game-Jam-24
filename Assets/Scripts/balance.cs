@@ -15,9 +15,11 @@ public class balance : MonoBehaviour
     public bool isBalanced;
 
     public AudioManager audioManager;
+    public float temp;
     // Start is called before the first frame update
     void Start()
     {
+        temp = force;
     }
 
     // Update is called once per frame
@@ -27,10 +29,12 @@ public class balance : MonoBehaviour
         {
             if(!groundcheck.isGrounded )
             {
-                isBalanced=false;     
+                isBalanced=false;
+                force = temp/4;     
             }
             else
             {
+                force = temp;     
                 rb.MoveRotation(Mathf.LerpAngle(rb.rotation, targetRotation, force * Time.fixedDeltaTime));
                 isBalanced=true;  
             }
