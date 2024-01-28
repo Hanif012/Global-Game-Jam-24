@@ -14,8 +14,6 @@ public class DialogueManager : MonoBehaviour
         public string sentences;
     }
     public Animator animator;
-    public Transform kingTextPos;
-    public Transform mageTextPos;
     public GameObject bubble;
     public  TMP_Text dialogueText;
     public Queue<string> nameOrder;
@@ -66,16 +64,16 @@ public class DialogueManager : MonoBehaviour
     IEnumerator TypeSentence (string sentence){
         dialogueText.text = "";
         animator.SetBool("SpeechOpen", true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         foreach(char letter in sentence.ToCharArray()){
-            bubble.GetComponent<RectTransform>().localScale = new Vector3(-1,1,1);
             dialogueText.text += letter;
             yield return new WaitForSeconds(0.07f);
         }
         yield return new WaitForSeconds(1f);
-        dialogueText.text = "";
         animator.SetBool("SpeechOpen", false);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.3f);
+        dialogueText.text = "";
+        yield return new WaitForSeconds(1f);
         DisplayNextSentence();
     }
 }
