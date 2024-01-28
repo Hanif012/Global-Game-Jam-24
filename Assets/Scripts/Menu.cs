@@ -28,9 +28,9 @@ public class Menu : MonoBehaviour
     }
 
     public void PlayGame(){
-        int level = Random.Range(2, 3);
+        int level = Random.Range(2, 4);
         while(level == SceneManager.GetActiveScene().buildIndex){
-            level = Random.Range(2, 3);
+            level = Random.Range(2, 4);
         }
         transition.SetTrigger("transIn");
         SceneManager.LoadScene(level);

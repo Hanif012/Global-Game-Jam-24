@@ -54,13 +54,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     IEnumerator ChangeScene(){
-        int level = Random.Range(2, 3);
-        while(level == SceneManager.GetActiveScene().buildIndex){
-            level = Random.Range(2, 3);
-        }
         yield return new WaitForSeconds(0.4f);
         Debug.Log("Change Scene");
-        SceneManager.LoadScene(level);
+        SceneManager.LoadScene(1);
     }
 
     public void StartDialogue(Dialogue[] dialogues){
