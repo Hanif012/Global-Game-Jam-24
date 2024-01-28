@@ -34,7 +34,10 @@ public class DialogueManager : MonoBehaviour
         trans.SetTrigger("transOut");
     }
     public void TimerFinish(){
-        StartDialogue(timerDialogue);
+        trans.SetTrigger("transIn");
+        StartCoroutine(ChangeScene());
+        // StartDialogue(timerDialogue);
+
     }
 
     public void KingDied(){
@@ -67,9 +70,9 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void Win(){
-        StartDialogue(winDialogue);
+        // StartDialogue(winDialogue);
         trans.SetTrigger("transIn");
-        SceneManager.LoadScene(Random.Range(2, 8));
+        SceneManager.LoadScene(Random.Range(2, 3));
     }
 
 

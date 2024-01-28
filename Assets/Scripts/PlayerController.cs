@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
                 footstep.Stop();
             }
         }
-        if(timer <= 0){
+        if(timer.time <= 0){
             dead = true;
         }
     }
@@ -42,14 +42,14 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if(!dead){
-        if (isJumpPressed)
-            {
-                // Debug.Log("FixedUpdate Jump");
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);   
-                isJumpPressed = false;
-            }
-            PlayerMovement();
-    }
+            if (isJumpPressed)
+                {
+                    // Debug.Log("FixedUpdate Jump");
+                    rb.velocity = new Vector2(rb.velocity.x, jumpForce);   
+                    isJumpPressed = false;
+                }
+                PlayerMovement();
+        }
         
     }
     void PlayerMovement()

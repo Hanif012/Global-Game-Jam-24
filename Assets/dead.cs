@@ -17,6 +17,7 @@ public class dead : MonoBehaviour
     {
         if(timer.time==0){
             hinge.enabled=false;
+            GameObject.Find("DialogueManager").GetComponent<DialogueManager>().TimerFinish();
         }
     }
 }
