@@ -67,7 +67,7 @@ public class DialogueManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         foreach(char letter in sentence.ToCharArray()){
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.07f);
+            yield return new WaitForSeconds(0.05f);
         }
         yield return new WaitForSeconds(1f);
         animator.SetBool("SpeechOpen", false);
