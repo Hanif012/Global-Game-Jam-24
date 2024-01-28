@@ -4786,9 +4786,9 @@ MonoBehaviour:
   dialogueText: {fileID: 167848040}
   introDialogue:
   - name: King
-    sentences: Hellooooooo
+    sentences: Me hate balloon
   - name: Mage
-    sentences: HIiiiiii
+    sentences: Better pop those balloons!
   winDialogue: []
   timerDialogue: []
   kingDiedDialogue: []
