@@ -7,8 +7,8 @@ public class SpawnManager : MonoBehaviour
     AudioSource audioSource;
     public Transform dartSpawnPosition;
     public GameObject dartPrefab;
-    public Animator kingAnimator;
-    
+
+
     [SerializeField]
     private GameObject yellowBalloonPrefab;
     [SerializeField]
@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour
     void FixedUpdate()
     {
         if(counterYellow == numberYellow){
-            
+            GameObject.Find("DialogueManager").GetComponent<DialogueManager>().Win();
         }
     }
     public void PopSFX(){
@@ -43,7 +43,7 @@ public class SpawnManager : MonoBehaviour
         Debug.Log("Spawn Dart");
         GameObject dart = Instantiate(dartPrefab, dartSpawnPosition.position, Quaternion.identity);
         dart.GetComponent<Dart>().spawnManager = this;
-        dart.GetComponent<Dart>().animator = kingAnimator;
+        // dart.GetComponent<Dart>().animator = kingAnimator;
 
     }
 }
