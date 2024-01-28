@@ -10,13 +10,12 @@ public class Menu : MonoBehaviour
 {
     AudioManager audioManager;
     public Animator animator;
+    public Animator animenu;
+    public Animator transition;
     public GameObject settings;
     public GameObject menu;
     public GameObject credit;
-    // public GameObject hoverPlay;
-    // public GameObject hoverSetting;
-    // public GameObject hoverCredit;
-    // public GameObject hoverExit;
+
 
     private void Start()
     {
@@ -24,10 +23,8 @@ public class Menu : MonoBehaviour
         settings.SetActive(false);
         menu.SetActive(true);
         credit.SetActive(false);
-        // hoverExit.SetActive(false);
-        // hoverCredit.SetActive(false);
-        // hoverPlay.SetActive(false);
-        // hoverSetting.SetActive(false);
+        animenu.SetTrigger("start");
+
     }
 
     public void PlayGame(){
@@ -35,6 +32,7 @@ public class Menu : MonoBehaviour
         while(level == SceneManager.GetActiveScene().buildIndex){
             level = Random.Range(2, 8);
         }
+        transition.SetTrigger("transIn");
         SceneManager.LoadScene(level);
     }
     public void SetVolume(float volume){
@@ -43,6 +41,7 @@ public class Menu : MonoBehaviour
     public void OpenSettings(){
         audioManager.PlaySound("OpenMenu"); 
         settings.SetActive(true);
+        animenu.SetBool("openMenu", false);
         menu.SetActive(false);
         animator.SetBool("settingOpen", true);
     }
@@ -50,56 +49,32 @@ public class Menu : MonoBehaviour
         audioManager.PlaySound("CloseMenu"); 
         settings.SetActive(false);
         menu.SetActive(true);
+        animenu.SetBool("openMenu", true);
         animator.SetBool("settingOpen", false);
     }
     public void OpenCredit(){
         audioManager.PlaySound("OpenMenu"); 
         credit.SetActive(true);
-        menu.SetActive(false);
         animator.SetBool("creditOpen", true);
+        animenu.SetBool("openMenu", false);
+        menu.SetActive(false);
+
     }
     public void CloseCredit(){
         audioManager.PlaySound("CloseMenu"); 
         credit.SetActive(false);
-        menu.SetActive(true);
         animator.SetBool("creditOpen", false);
+        menu.SetActive(true);
+        animenu.SetBool("openMenu", true);
     }
 
     public void SetFullscreen(bool isFullscreen){
         Screen.fullScreen = isFullscreen;
     }
+    
     public void QuitGame(){
         Application.Quit();
     }
-
-    // public void OnHoverPlay(){
-    //     audioManager.PlaySound("Hover");
-    //     hoverExit.SetActive(false);
-    //     hoverCredit.SetActive(false);
-    //     hoverPlay.SetActive(true);
-    //     hoverSetting.SetActive(false);
-    // }
-    // public void OnHoverCredit(){
-    //     audioManager.PlaySound("Hover");
-    //     hoverExit.SetActive(false);
-    //     hoverCredit.SetActive(true);
-    //     hoverPlay.SetActive(false);
-    //     hoverSetting.SetActive(false);
-    // }
-    // public void OnHoverSetting(){
-    //     audioManager.PlaySound("Hover");
-    //     hoverExit.SetActive(false);
-    //     hoverCredit.SetActive(false);
-    //     hoverPlay.SetActive(false);
-    //     hoverSetting.SetActive(true);
-    // }
-    // public void OnHoverQuit(){
-    //     audioManager.PlaySound("Hover");
-    //     hoverExit.SetActive(true);
-    //     hoverCredit.SetActive(false);
-    //     hoverPlay.SetActive(false);
-    //     hoverSetting.SetActive(false);   
-    // }
 
     public void OnClick(){
         audioManager.PlaySound("Click");

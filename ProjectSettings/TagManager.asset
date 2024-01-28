@@ -57,3 +57,6 @@ TagManager:
   - name: pick
     uniqueID: 674273297
     locked: 0
+  - name: trans
+    uniqueID: 545407115
+    locked: 0
