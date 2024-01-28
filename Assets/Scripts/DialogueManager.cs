@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor.PackageManager;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -53,9 +54,13 @@ public class DialogueManager : MonoBehaviour
     }
 
     IEnumerator ChangeScene(){
+        int level = Random.Range(2, 3);
+        while(level == SceneManager.GetActiveScene().buildIndex){
+            level = Random.Range(2, 3);
+        }
         yield return new WaitForSeconds(0.4f);
         Debug.Log("Change Scene");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(level);
     }
 
     public void StartDialogue(Dialogue[] dialogues){
