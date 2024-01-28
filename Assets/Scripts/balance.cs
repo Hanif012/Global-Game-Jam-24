@@ -13,6 +13,7 @@ public class balance : MonoBehaviour
     public bool isGroundCheck=false;
     public bool isGrounded;
     public bool isBalanced;
+    public bool dead;
 
     public AudioManager audioManager;
     public float temp;
@@ -25,6 +26,10 @@ public class balance : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(groundcheck.dead){
+            temp = 0;
+            force = 0;
+        }
         if(!isGroundCheck)
         {
             if(!groundcheck.isGrounded )

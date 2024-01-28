@@ -12,38 +12,44 @@ public class PlayerController : MonoBehaviour
     public bool isJumpPressed = false;
     public balance groundCheck;
     public TimerSlider timer;
+    public bool dead = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && groundCheck.isGrounded)
-        {
-            isJumpPressed = true;
-            audioManager.PlaySound("Jump");
-        //    Debug.Log("Update Jump");
-        } 
+        if(!dead){
+            if (Input.GetKeyDown(KeyCode.Space) && groundCheck.isGrounded)
+            {
+                isJumpPressed = true;
+                audioManager.PlaySound("Jump");
+            //    Debug.Log("Update Jump");
+            } 
 
-        if(Mathf.Abs(rb.velocity.x) > 0.4f && groundCheck.isGrounded){
-            if(!footstep.isPlaying){
-                footstep.Play();
+            if(Mathf.Abs(rb.velocity.x) > 0.4f && groundCheck.isGrounded){
+                if(!footstep.isPlaying){
+                    footstep.Play();
+                }
+            }
+            else{;
+                footstep.Stop();
             }
         }
-        else{;
-            footstep.Stop();
+        if(timer <= 0){
+            dead = true;
         }
     }
 
     void FixedUpdate()
     {
-        if(timer.time != 0){
-            if (isJumpPressed)
+        if(!dead){
+        if (isJumpPressed)
             {
                 // Debug.Log("FixedUpdate Jump");
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);   
                 isJumpPressed = false;
             }
             PlayerMovement();
-        }
+    }
         
     }
     void PlayerMovement()

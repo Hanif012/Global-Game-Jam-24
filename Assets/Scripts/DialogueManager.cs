@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> sentences;
 
     public Dialogue[] introDialogue;
+    public Dialogue[] winDialogue;
     public Dialogue[] timerDialogue;
     public Dialogue[] kingDiedDialogue;
     // Start is called before the first frame update
@@ -29,14 +31,28 @@ public class DialogueManager : MonoBehaviour
         nameOrder = new Queue<string>();
         sentences = new Queue<string>();
         StartDialogue(introDialogue);
-        trans.SetTrigger("transout");
+        trans.SetTrigger("transOut");
     }
     public void TimerFinish(){
         StartDialogue(timerDialogue);
     }
 
-    public void TingDied(){
+    public void KingDied(){
         StartDialogue(kingDiedDialogue);
+    }
+    bool dying = false;
+    public void Died(){
+        if(!dying){
+            dying = true;
+            trans.SetTrigger("transIn");
+            StartCoroutine(ChangeScene());
+        }
+    }
+
+    IEnumerator ChangeScene(){
+        yield return new WaitForSeconds(0.4f);
+        Debug.Log("Change Scene");
+        SceneManager.LoadScene(1);
     }
 
     public void StartDialogue(Dialogue[] dialogues){
@@ -48,6 +64,12 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(dialog.sentences);
         }
         DisplayNextSentence();
+    }
+
+    public void Win(){
+        StartDialogue(winDialogue);
+        trans.SetTrigger("transIn");
+        SceneManager.LoadScene(Random.Range(2, 8));
     }
 
 
