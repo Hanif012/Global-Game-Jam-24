@@ -11,6 +11,7 @@ TagManager:
   - DartDelete
   - Box
   - Platform
+  - King
   layers:
   - Default
   - TransparentFX

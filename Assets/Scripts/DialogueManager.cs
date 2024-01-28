@@ -19,17 +19,24 @@ public class DialogueManager : MonoBehaviour
     public Queue<string> nameOrder;
     public Queue<string> sentences;
 
-    public Dialogue[] dialogues;
-
+    public Dialogue[] introDialogue;
+    public Dialogue[] timerDialogue;
+    public Dialogue[] kingDiedDialogue;
     // Start is called before the first frame update
     void Start()
     {
         nameOrder = new Queue<string>();
         sentences = new Queue<string>();
-        StartDialogue(dialogues);
+        StartDialogue(introDialogue);
+    }
+    public void TimerFinish(){
+        StartDialogue(timerDialogue);
     }
 
-    // Update is called once per frame
+    public void TingDied(){
+        StartDialogue(kingDiedDialogue);
+    }
+
     public void StartDialogue(Dialogue[] dialogues){
         Debug.Log("Starting conversation with " + dialogues[0].name);
         nameOrder.Clear();
@@ -40,6 +47,7 @@ public class DialogueManager : MonoBehaviour
         }
         DisplayNextSentence();
     }
+
 
     public void DisplayNextSentence(){
         dialogueText.text = "";
