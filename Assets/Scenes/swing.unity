@@ -1104,7 +1104,7 @@ GameObject:
   - component: {fileID: 240602171}
   - component: {fileID: 240602167}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: YellowBalloon
   m_TagString: yellowballoon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1322,6 +1322,10 @@ PrefabInstance:
     - target: {fileID: -8653719598885068355, guid: 6c532112d44cfdf42ad407e2d728b89f, type: 3}
       propertyPath: m_Name
       value: Korden
+      objectReference: {fileID: 0}
+    - target: {fileID: -8653719598885068355, guid: 6c532112d44cfdf42ad407e2d728b89f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 6c532112d44cfdf42ad407e2d728b89f, type: 3}
       propertyPath: m_LocalScale.x
@@ -4502,7 +4506,7 @@ GameObject:
   - component: {fileID: 1651009430}
   - component: {fileID: 1651009429}
   m_Layer: 0
-  m_Name: org
+  m_Name: OrangeBalloon
   m_TagString: orangeballoon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
