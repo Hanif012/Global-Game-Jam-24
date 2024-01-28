@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float jumpForce = 10f;
     public bool isJumpPressed = false;
     public balance groundCheck;
+    public TimerSlider timer;
 
     // Update is called once per frame
     void Update()
@@ -34,13 +35,15 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isJumpPressed)
-        {
-            // Debug.Log("FixedUpdate Jump");
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);   
-            isJumpPressed = false;
+        if(timer.time != 0){
+            if (isJumpPressed)
+            {
+                // Debug.Log("FixedUpdate Jump");
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce);   
+                isJumpPressed = false;
+            }
+            PlayerMovement();
         }
-        PlayerMovement();
         
     }
     void PlayerMovement()

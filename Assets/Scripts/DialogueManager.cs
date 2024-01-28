@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
         public string sentences;
     }
     public Animator animator;
+    public Animator trans;
     public GameObject bubble;
     public  TMP_Text dialogueText;
     public Queue<string> nameOrder;
@@ -28,6 +29,7 @@ public class DialogueManager : MonoBehaviour
         nameOrder = new Queue<string>();
         sentences = new Queue<string>();
         StartDialogue(introDialogue);
+        trans.SetTrigger("transout");
     }
     public void TimerFinish(){
         StartDialogue(timerDialogue);

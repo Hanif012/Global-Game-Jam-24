@@ -1,9 +1,10 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class sleepiness : MonoBehaviour
+public class TimerSlider : MonoBehaviour
 {
     public Slider slider;
     public int time = 100;

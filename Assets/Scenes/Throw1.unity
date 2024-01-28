@@ -4453,6 +4453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1812888516}
   - component: {fileID: 1812888515}
+  - component: {fileID: 1812888517}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -4473,6 +4474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 2136807501}
+  trans: {fileID: 1812888517}
   bubble: {fileID: 2136807497}
   dialogueText: {fileID: 167848040}
   introDialogue:
@@ -4497,6 +4499,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1812888517
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812888514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88d2967fbb9ee2346b19e3292c0d61b6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1820533333 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5890082537211967730, guid: 9f9ee6bf544225b4d907ff5f65861474, type: 3}

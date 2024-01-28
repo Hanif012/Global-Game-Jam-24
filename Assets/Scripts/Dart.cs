@@ -6,9 +6,11 @@ public class Dart : MonoBehaviour
 {
     public SpawnManager spawnManager;
     public Animator animator;
+    public TimerSlider timers;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.tag);
         if(other.CompareTag("yellowballoon"))
         {
             spawnManager.PopSFX();
@@ -18,7 +20,7 @@ public class Dart : MonoBehaviour
         if(other.CompareTag("orangeballoon"))
         {
             spawnManager.PopSFX();
-            //timernya minusin
+            // timers.time -= timers.time / 20;
             Destroy(other.gameObject);
         }
         if(other.CompareTag("DartDelete"))
